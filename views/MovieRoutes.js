@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.get('/id/:id', (req, res) => {
     try {
         let id = req.params.id;
-        Movie.findByPk(id)
+        models.Movie.findByPk(id)
             .then(resp => res.send(resp))
     } catch (error) {
         res.send(error)
@@ -25,7 +25,7 @@ router.get('/id/:id', (req, res) => {
 router.get('/genre/:genre', (req, res) => {
     try {
         let genre = req.params.genre;
-        Movie.findAll({
+        models.Movie.findAll({
             where: {
                 genre: genre
             }
@@ -40,7 +40,7 @@ router.get('/genre/:genre', (req, res) => {
 router.post('/newMovie', async (req, res) => {
     try {
         let data = req.body
-        let resp = await Movie.create({
+        let resp = await models.Movie.create({
             title: data.title,
             poster: data.poster,
             release_date: data.release_date,
@@ -57,7 +57,7 @@ router.post('/newMovie', async (req, res) => {
 router.put('/updateMovie', async (req, res) => {
     try {
         let data = req.body;
-        let resp = await Movie.update(
+        let resp = await models.Movie.update(
             {
                 title: data.title,
                 poster: data.poster,
@@ -78,7 +78,7 @@ router.put('/updateMovie', async (req, res) => {
 router.delete('/deleteMovie/:movie_id', async(req, res) => {
     try {
         let movie_id = req.params.movie_id
-        let resp = await Movie.destroy({
+        let resp = await models.Movie.destroy({
             where : {movie_id : movie_id}
         })
         if(resp == 1){
