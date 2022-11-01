@@ -23,7 +23,11 @@ app.listen(PORT, () => {
     //con sync({force: true}) se sincroniza sequelize con nuestra DB, force hace que pueda sobreescribir tablas
     //con authenticate no sobreescribe y es más ligero, pero también se sincroniza
 
-    sequelize.sync({force: true}).then(() =>{
+    // sequelize.sync({force: true}).then(() =>{
+    //     console.log('Conected to database')
+    // }).catch(error => console.log(`Conection error ${error}`))
+
+    db.authenticate().then(() =>{
         console.log('Conected to database')
     }).catch(error => console.log(`Conection error ${error}`))
 });

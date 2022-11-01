@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
   Article.init({
     article_id: { 
       type:DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement:true
     }
   }, {
     sequelize,

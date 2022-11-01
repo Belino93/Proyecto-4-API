@@ -21,6 +21,21 @@ router.get('/id/:id', (req, res) => {
     }
 })
 
+// Busqueda por titulo
+router.get('/title/:title', async(req, res) => {
+    try {
+        let title = req.params.title;
+        models.Movie.findAll({
+            where: {
+                title: title
+            }
+        })
+        .then(resp => {res.send(resp)})
+    } catch (error) {
+        
+    }
+})
+
 // Busqueda por genero
 router.get('/genre/:genre', (req, res) => {
     try {
@@ -30,7 +45,7 @@ router.get('/genre/:genre', (req, res) => {
                 genre: genre
             }
         })
-            .then(resp => res.send(resp))
+        .then(resp => res.send(resp))
     } catch (error) {
         res.send(error)
     }
