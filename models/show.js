@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   Show.init({
     show_id:{
       type : DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement:true
     },
     title: DataTypes.STRING,
     poster: DataTypes.STRING,
