@@ -9,10 +9,12 @@ const MovieController = require('../controllers/MovieController')
 //     let resp = await models.Movie.findAll()
 //     res.send(resp)
 // })
+
+// All Movies
 router.get('/', MovieController.getMovies)
 
 // Top rated movies
-router.get('/topMovies', MovieController.getTopRatedMovies)
+router.get('/top', MovieController.getTopRatedMovies)
 
 // Busqueda por ID
 router.get('/id/:id', MovieController.getMovie)

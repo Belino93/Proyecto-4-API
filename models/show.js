@@ -29,7 +29,13 @@ module.exports = (sequelize, DataTypes) => {
     poster: DataTypes.STRING,
     overview: DataTypes.TEXT,
     first_air_date: DataTypes.DATEONLY,
-    genre: DataTypes.STRING
+    genre: DataTypes.STRING,
+    rating: DataTypes.INTEGER,
+    next_chapter: DataTypes.DATEONLY,
+    only_tv: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
   }, {
     sequelize,
     modelName: 'Show',

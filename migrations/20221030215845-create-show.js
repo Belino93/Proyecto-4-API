@@ -28,6 +28,18 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      rating: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      },
+      next_chapter: {
+        type: Sequelize.DATEONLY,
+        allowNull:true
+      },
+      only_tv: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       
     });
   },

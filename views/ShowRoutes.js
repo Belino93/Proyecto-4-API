@@ -4,15 +4,19 @@ const db = require('../db/db')
 const models = require('../models/index');
 const ShowController = require('../controllers/ShowController')
 
-// Todas las series
+// All shows
 router.get('/', ShowController.getShows)
 
-// Busqueda por id
+// Top rated Shows
+router.get('/top', ShowController.getTopRatedShows)
+
+// Search by id
 router.get('/id/:id', ShowController.getShow)
 
 // Busqueda pase cines y teateros
+router.get('/special_event', ShowController.getShowsOut)
 
-// Busqueda por genero
+// Search by genre
 router.get('/title/:title', ShowController.getShowByTitle)
 
 module.exports = router

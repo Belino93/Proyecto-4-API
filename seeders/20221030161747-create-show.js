@@ -102,7 +102,8 @@ module.exports = {
         overview: "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
         genre : "Adventure",
         "article_id": 31,
-        "rating":9
+        "rating":9,
+        only_tv: true
       },
       {
         title: "The Simpsons",
@@ -129,7 +130,8 @@ module.exports = {
         overview: "Normal high school kids by day, protectors of Paris by night! Miraculous follows the heroic adventures of Marinette and Adrien as they transform into Ladybug and Cat Noir and set out to capture akumas, creatures responsible for turning the people of Paris into villains. But neither hero knows the other’s true identity – or that they’re classmates!",
         genre : "Animated",
         "article_id": 34,
-        "rating":6
+        "rating":6,
+        only_tv: true
       },
       {
         title: "Lucifer",
@@ -174,7 +176,8 @@ module.exports = {
         overview: "An anthology horror drama series centering on different characters and locations, including a house with a murderous past, an asylum, a witch coven, a freak show, a hotel, a farmhouse in Roanoke, a cult, the apocalypse and a summer camp.",
         genre : "Horror",
         "article_id": 39,
-        "rating":9
+        "rating":9,
+        only_tv: true
       }
 
 

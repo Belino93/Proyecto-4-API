@@ -51,4 +51,17 @@ ShowController.getShowByTitle = async(req, res) => {
     }
 }
 
+ShowController.getShowsOut = async(req, res) => {
+    try {
+        let resp = await models.Show.findAll({
+            where: {
+                only_tv: true
+            }
+        })
+        res.send(resp)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
 module.exports = ShowController
