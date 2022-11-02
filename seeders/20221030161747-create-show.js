@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('Show', [
+    await queryInterface.bulkInsert('Shows', [
       {
         title: "House of the Dragon",
         poster: "/z2yahl2uefxDCl0nogcRBstwruJ.jpg",

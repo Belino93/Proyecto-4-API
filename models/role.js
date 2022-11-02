@@ -16,13 +16,13 @@ module.exports = (sequelize, DataTypes) => {
   Role.init({
     role_id: {
       type:DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement:true
     },
     role_name: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Role',
-    freezeTableName: true,
     timestamps:false
   });
   return Role;
