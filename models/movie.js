@@ -29,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     poster: DataTypes.STRING,
     release_date: DataTypes.DATEONLY,
     overview: DataTypes.TEXT,
-    genre: DataTypes.STRING
+    genre: DataTypes.STRING,
+    rating: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Movie',
