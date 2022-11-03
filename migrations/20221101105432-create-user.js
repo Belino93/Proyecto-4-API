@@ -13,17 +13,21 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      surname:{
+        type:DataTypes.STRING,
+        allowNull:false
+      },
+      country: {
+        type:DataTypes.STRING,
+        allowNull:false
+      },
       email: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type:Sequelize.STRING,
+        unique:true
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
+      user_role: {
+        type:Sequelize.INTEGER,
+        defaultValue: 2
       }
     });
   },

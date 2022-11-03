@@ -11,9 +11,7 @@ const PORT = 3005
 app.use(express.json())
 app.use(router)
 app.use(morgan('dev'))
-app.get('/', (req, res) => {
-    res.send('Bienvenido')
-})
+
 
 
 // Start server

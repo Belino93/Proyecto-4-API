@@ -32,7 +32,16 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement:true
     },
     name: DataTypes.STRING,
-    email: DataTypes.STRING
+    surname:DataTypes.STRING,
+    country: DataTypes.STRING,
+    email: {
+      type:DataTypes.STRING,
+      unique:true
+    },
+    user_role: {
+      type:DataTypes.INTEGER,
+      defaultValue: 2
+    }
   }, {
     sequelize,
     modelName: 'User',
