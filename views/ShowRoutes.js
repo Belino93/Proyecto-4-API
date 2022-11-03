@@ -13,10 +13,13 @@ router.get('/top', ShowController.getTopRatedShows)
 // Search by id
 router.get('/id/:id', ShowController.getShow)
 
-// Busqueda pase cines y teateros
+// Chapter in cinema or theater
 router.get('/special_event', ShowController.getShowsOut)
 
 // Search by genre
 router.get('/title/:title', ShowController.getShowByTitle)
+
+// Next episode in 7 days
+router.get('/nextChapter', ShowController.getNextChapters)
 
 module.exports = router

@@ -73,7 +73,7 @@ module.exports = {
         "poster": "/pHkKbIRoCe7zIFvqan9LFSaQAde.jpg",
         "release_date": "2022-07-27",
         "overview": "After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.",
-        genre : 'Horror',
+        "genre" : 'Horror',
         "article_id": 8,
         "rating": 5
       },
@@ -82,7 +82,7 @@ module.exports = {
         "poster": "/7ze7YNmUaX81ufctGqt0AgHxRtL.jpg",
         "release_date": "2022-09-27",
         "overview": "It's been 29 years since someone lit the Black Flame Candle and resurrected the 17th-century sisters, and they are looking for revenge. Now it's up to three high-school students to stop the ravenous witches from wreaking a new kind of havoc on Salem before dawn on All Hallow's Eve.",
-        genre : 'Adventure',
+        "genre" : 'Adventure',
         "article_id": 9,
         "rating": 8
       },
