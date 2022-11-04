@@ -40,8 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     user_role: {
       type:DataTypes.INTEGER,
-      defaultValue: 2
-    }
+      defaultValue: 2    }
   }, {
     sequelize,
     modelName: 'User',

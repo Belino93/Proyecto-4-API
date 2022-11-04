@@ -5,7 +5,7 @@ const MovieController = {}
 
 MovieController.getMovies = async (req, res) => {
     try{
-        let resp = await models.Movie.findAll()
+        const resp = await models.Movie.findAll()
         res.send(resp)
     }catch(error){
         res.send(error)
@@ -15,7 +15,7 @@ MovieController.getMovies = async (req, res) => {
 // Top 10 rated movies
 MovieController.getTopRatedMovies = async(req, res) => {
     try{
-        let resp = await models.Movie.findAll({
+        const resp = await models.Movie.findAll({
             order: [['rating', 'DESC']]
         })
         res.send(resp)
@@ -28,7 +28,7 @@ MovieController.getTopRatedMovies = async(req, res) => {
 // Search by ID
 MovieController.getMovie = (req, res) => {
     try {
-        let id = req.params.id;
+        const id = req.params.id;
         models.Movie.findByPk(id)
             .then(resp => res.send(resp))
     } catch (error) {
@@ -39,7 +39,7 @@ MovieController.getMovie = (req, res) => {
 // Search by title
 MovieController.getMovieByTitle = async(req, res) => {
     try {
-        let title = req.params.title;
+        const title = req.params.title;
         models.Movie.findAll({
             where: {
                 title: title
@@ -54,8 +54,8 @@ MovieController.getMovieByTitle = async(req, res) => {
 // Search by genre
 MovieController.getMovieByGenre = async (req, res) => {
     try {
-        let genre = req.params.genre;
-        let resp = await models.Movie.findAll({
+        const genre = req.params.genre;
+        const resp = await models.Movie.findAll({
             where: {
                 genre: genre
             }
@@ -69,8 +69,8 @@ MovieController.getMovieByGenre = async (req, res) => {
 
 // router.post('/newMovie', async (req, res) => {
 //     try {
-//         let data = req.body
-//         let resp = await models.Movie.create({
+//         const data = req.body
+//         const resp = await models.Movie.create({
 //             title: data.title,
 //             poster: data.poster,
 //             release_date: data.release_date,
@@ -86,8 +86,8 @@ MovieController.getMovieByGenre = async (req, res) => {
 
 // router.put('/updateMovie', async (req, res) => {
 //     try {
-//         let data = req.body;
-//         let resp = await models.Movie.update(
+//         const data = req.body;
+//         const resp = await models.Movie.update(
 //             {
 //                 title: data.title,
 //                 poster: data.poster,
@@ -105,10 +105,10 @@ MovieController.getMovieByGenre = async (req, res) => {
 
 // })
 
-// router.delete('/deleteMovie/:movie_id', async(req, res) => {
+// router.deconste('/deconsteMovie/:movie_id', async(req, res) => {
 //     try {
-//         let movie_id = req.params.movie_id
-//         let resp = await models.Movie.destroy({
+//         const movie_id = req.params.movie_id
+//         const resp = await models.Movie.destroy({
 //             where : {movie_id : movie_id}
 //         })
 //         if(resp == 1){
