@@ -1,20 +1,20 @@
-const models = require('../models')
+const { isValidUserAndPassword } = require("../services/auth.service.js");
+const jsonwebtoken = require("jsonwebtoken");
 
-const validateAdmin = async (req, res, next) => {
+
+const authBearerMiddleware = async(req, res, next) => {
+    const { authorization } = req.header;
+
+    const [strategy, jwt] = authorization.split(" ");
     try {
-        const { adminEmail } = req.body;
-        const resp = await models.User.findOne({
-            where: { email: adminEmail },
-        })
-        if(resp != null && resp.user_role === 1){
-            next()
-        }else{
-            throw new Error('Only admins can do this')
+        if(strategy.toLowerCase() !== "bearer"){
+            throw new Error('Invalid strategy')
         }
+        jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
     } catch (error) {
-        res.send(`${error}`)
+        res.status(401).json({ message: "Uou are not authenticated"})
     }
+    next();
+};
 
-}
-
-module.exports = validateAdmin
+module.exports = { authBearerMiddleware };
