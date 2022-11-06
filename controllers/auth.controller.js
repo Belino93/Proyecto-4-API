@@ -22,7 +22,7 @@ const authLoginController = async(req, res) => {
         return;
     }
 
-    const secret = process.env.JWT_SECRETT || "";
+    const secret = process.env.JWT_SECRET || "";
 
     if (secret.length < 10) {
         throw new Error('JWT_SECRET is not set');
@@ -30,6 +30,8 @@ const authLoginController = async(req, res) => {
 
     const jwt = jsonwebtoken.sign({
         email: userFound.email,
+        user_role : userFound.user_role,
+        user_id : userFound.user_id
     }, secret);
 
     res.status(200).json({
@@ -66,6 +68,7 @@ const authRegisterController = async (req, res) => {
     }
     // Save user in DB
     try {
+        delete body.user_role
         const userCreated = await createUserService(body);
         delete userCreated.password;
         delete userCreated.user_id;

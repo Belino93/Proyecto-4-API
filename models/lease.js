@@ -27,14 +27,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement:true
     },
-    date_start: { 
-      type:DataTypes.DATEONLY,
-      allowNull:false
-    },
-    date_end: { 
-      type:DataTypes.DATEONLY,
-      allowNull:false
-    },
     user_id:{ 
       type:DataTypes.INTEGER,
       allowNull:false

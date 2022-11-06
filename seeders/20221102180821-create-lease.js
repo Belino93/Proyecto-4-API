@@ -6,13 +6,9 @@ module.exports = {
 
     await queryInterface.bulkInsert('Leases', [
       {
-        date_start:'2022-11-5',
-        date_end: '2022-11-10',
         user_id: 1
       },
       {
-        date_start:'2022-11-1',
-        date_end: '2022-11-4',
         user_id: 2
       },
     ], {});

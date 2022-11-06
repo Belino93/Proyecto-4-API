@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     genre: DataTypes.STRING,
     rating: DataTypes.INTEGER,
     next_chapter: DataTypes.DATEONLY,
-    only_tv: {
+    special_event: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },

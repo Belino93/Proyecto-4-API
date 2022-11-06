@@ -1,14 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const db = require('../db/db')
-const models = require('../models/index');
 const MovieController = require('../controllers/MovieController')
 
-// Todas las peliculas
-// router.get('/', async (req, res) => {
-//     let resp = await models.Movie.findAll()
-//     res.send(resp)
-// })
 
 // All Movies
 router.get('/', MovieController.getMovies)

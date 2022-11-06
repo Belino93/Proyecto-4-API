@@ -57,7 +57,7 @@ ShowController.getShowsOut = async(req, res) => {
     try {
         let resp = await models.Show.findAll({
             where: {
-                only_tv: true
+                special_event: true
             }
         })
         res.send(resp)

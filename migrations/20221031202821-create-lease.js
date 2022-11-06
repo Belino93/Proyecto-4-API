@@ -9,14 +9,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      date_start: {
-        type: Sequelize.DATE,
-        allowNull:false
-      },
-      date_end: {
-        type: Sequelize.DATE,
-        allowNull:false
-      },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull:false

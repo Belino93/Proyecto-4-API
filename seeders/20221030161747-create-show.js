@@ -105,7 +105,7 @@ module.exports = {
         "genre" : "Adventure",
         "article_id": 31,
         "rating":9,
-        "only_tv": true
+        "special_event": true
       },
       {
         "title": "The Simpsons",
@@ -134,7 +134,7 @@ module.exports = {
         "genre" : "Animated",
         "article_id": 34,
         "rating":6,
-        "only_tv": true
+        "special_event": true
       },
       {
         "title": "Lucifer",
@@ -180,7 +180,7 @@ module.exports = {
         "genre" : "Horror",
         "article_id": 39,
         "rating":9,
-        "only_tv": true
+        "special_event": true
       }
 
 

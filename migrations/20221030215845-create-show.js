@@ -36,7 +36,7 @@ module.exports = {
         type: Sequelize.DATEONLY,
         allowNull:true
       },
-      only_tv: {
+      special_event: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       },

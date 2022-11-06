@@ -10,8 +10,6 @@ const PORT = 3005
  // Middlewares
 app.use(express.json())
 app.use(router)
-app.use(morgan('dev'))
-
 
 
 // Start server

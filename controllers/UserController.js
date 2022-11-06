@@ -2,10 +2,6 @@ const { sequelize } = require('../models')
 const models = require('../models')
 const {
     assertValidPasswordService,
-    assertEmailIsUniqueService,
-    assertEmailIsValid,
-    createUserService,
-    isValidUserAndPassword,
     encryptPassword
 } = require('../services/auth.service')
 
@@ -15,7 +11,7 @@ const UserController = {}
 
 // Get user
 UserController.getUser = async (req, res) => {
-    const email = req.params.email;
+    const email = req.auth.email;
     try {
         const resp = await models.User.findOne({
             where: { email: email },
@@ -31,15 +27,14 @@ UserController.getUser = async (req, res) => {
 
 //Update User
 UserController.patchUser = async (req, res) => {
-    const { name, surname, country, email } = req.body;
+    const { name } = req.body;
+
     try {
         await models.User.update({
             name: name,
-            surname: surname,
-            country: country,
         },
             {
-                where: { email: email }
+                where: { email: req.auth.email }
             })
         res.send('Register updated succesfully')
     } catch (error) {
@@ -49,21 +44,29 @@ UserController.patchUser = async (req, res) => {
 
 // Delete User
 UserController.deleteUser = async (req, res) => {
-    try {
-        let { email } = req.body;
-        let resp = await models.User.destroy({
-            where: {
-                email: email
+    let user_role = req.auth.user_role
+    console.log(user_role)
+    let deleteId = req.params.id
+    if (user_role === 1) {
+        try {
+
+            let resp = await models.User.destroy({
+                where: {
+                    user_id : deleteId
+                }
+            })
+            if (resp === 1) {
+                res.send('User deleted succesfully');
+            } else {
+                throw new Error('User error');
             }
-        })
-        if (resp === 1) {
-            res.send('User deleted succesfully');
-        }else{
-            throw new Error('Email error');
+        } catch (error) {
+            res.send(`${error}`);
         }
-    } catch (error) {
-        res.send(`${error}`);
+    }else{
+        res.status(401).json({message: 'Only admins can do this'})
     }
+
 }
 
 module.exports = UserController;
