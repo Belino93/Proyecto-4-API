@@ -140,7 +140,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
         * **deleteUser**: Elimina un usuario.
 
 * **migrations**
-    Estos archivos controlan las migraciones de cada tabla.(No tienen relaciones)
+    Estos archivos controlan las migraciones de cada tabla.(No tienen relaciones).
 
 * **models**
    Modelos de las tablas generados con sequelize-cli.(Con relaciones)
@@ -154,4 +154,16 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
 /logs
 package-lock.json
 ```
+## Explicación de la securización de la API:
+* Los usuarios que no estén logados pueden:
+    * Acceder a los enpoints de peliculas y series.
+    * Registrarse y loguearse.
+* Los usuarios logueados con rol 'user', pueden ademas:
+    * Extraer su usuario.
+    * Cambiar su nombre de usuario.
+    * Acceder a sus prestamos.
+    * Generar un nuevo prestamo propio.
+* Los usuarios con rol 'admin', tambien pueden:
+    * Acceder a todos los pedidos.
+    * Borrar un usuario.
 
