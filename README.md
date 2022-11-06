@@ -2,14 +2,11 @@
 
 ## Proyecto realizado para GeeksHubs Academy, se nos pide crear la parte backend para una aplicación de alquiler de películas tomando como referencia la popular plataforma de alquiler online o streaming Netflix...
 Las funcionalidades que serán requeridas para este primer check radicarán en
-la consulta de datos. Desde Postman seremos capaces de buscar información
-concreta de la API themoviedB mediante endpoints, que serán descritos a
-continuación.
-Además de ello, seremos capaces de consumir datos de una base de datos
+la consulta de datos. Seremos capaces de consumir datos de una base de datos
 generada por nosotros mismos, en la que depositamos todos los datos de
 usuarios y alquileres.
 
-La relacion entre tablas seria la siguiente
+La relación entre tablas seria la siguiente
 ***
 ![image](https://user-images.githubusercontent.com/90568424/200182878-c99740e5-eece-4333-b173-aaf6e651031a.png)
 
@@ -48,7 +45,7 @@ sequelize db:seed:all
 ```
 ## Uso de la API
 
-Haz click para realizar una copia en postman del workspace con las request permitidas.
+Haz clic para realizar una copia en postman del workspace con las request permitidas.
 <br>
 
  [![Ejecutar en Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/11138723-eeb5cf01-1f60-493f-9755-3a67dcc8988f?action=collection%2Ffork&collection-url=entityId%3D11138723-eeb5cf01-1f60-493f-9755-3a67dcc8988f%26entityType%3Dcollection%26workspaceId%3D8cbf41ec-fd52-44cd-82e7-1a6bcbebc7d5)
@@ -76,7 +73,7 @@ npm run dev
 ```
 npm i morgan
 ```
-* **sequelize**: Instalar el ORM sequelize y sequelize-cli para poder interactuar con la base de datos, tambien instalamos los dialectos de mysql.
+* **sequelize**: Instalar el ORM sequelize y sequelize-cli para poder interactuar con la base de datos, también instalamos los dialectos de mysql.
 ```
 npm i sequelize-cli -g
 npm i --save sequelize mysql2 sequelize-cli
@@ -86,7 +83,7 @@ sequelize init
 ```
 npm i jsonwebtoken
 ```
-* **crypt**: Usamos la libreria nativa de node 'crypt':
+* **crypt**: Usamos la librería nativa de node 'crypt':
 
 ## Explicación de la estructura del proyecto
 
@@ -102,7 +99,7 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
 
 * **db.js**: Gestiona el acceso a la base de datos.
 
-* **router.js**: Gestiona las rutas de la aplicacion.
+* **router.js**: Gestiona las rutas de la aplicación.
 
 * **views**
     * **authRoutes.js**: Gestiona la ruta /auth y sus endpoints.
@@ -113,29 +110,29 @@ Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CR
 
 * **controllers**
     * **auth.controller.js**: En este archivo creamos las funciones de cada endpoint:
-        * **authLoginController**: Controla el login y crea el token de autenticacion.
+        * **authLoginController**: Controla el login y crea el token de autenticación.
         * **authRegisterController**: Valida el registro de un usuario.
     * **MovieController.js**: En este archivo creamos las funciones de cada endpoint:
-        * **getMovies**: Todas las peliculas.
-        * **getTopRatedMovies**: Peliculas top.
-        * **getMovie**: Pelicula por id.
-        * **getMovieByTitle**: Pelicula por titulo.
-        * **getMovieByGenre**: Pelicula por genero
+        * **getMovies**: Todas las películas.
+        * **getTopRatedMovies**: Películas top.
+        * **getMovie**: Película por id.
+        * **getMovieByTitle**: Película por título.
+        * **getMovieByGenre**: Película por genero
 
     * **LeaseController.js**: En este archivo creamos las funciones de cada endpoint:
-        * **newLease**: Crea un nuevo prestamo, es necesario enviar un array de articulos id en el body.
-        * **updateLease**: Actualiza el articulo de un prestamo.
-        * **showLease**: Extrae los prestamos de un usuario.
+        * **newLease**: Crea un nuevo préstamo, es necesario enviar un array de artículos id en el body.
+        * **updateLease**: Actualiza el artículo de un prestamo.
+        * **showLease**: Extrae los préstamos de un usuario.
         * **geshowAlltAll**: Extrae todos los pedidos(Necesitas ser admin).
    * **ShowController.js**: En este archivo creamos las funciones de cada endpoint:
         * **getShows**: Todas las series.
         * **getTopRatedShows**: Series top.
         * **getShow**: Show por ir.
-        * **getShowByTitle**: Show por titulo.
+        * **getShowByTitle**: Show por título.
         * **getShowsOut** : Extrae las series que tienen pases en cines o teatros
-        * **getNextChapters**: Extrae las series que emiten capitulo en los proximos 7 dias
+        * **getNextChapters**: Extrae las series que emiten capitulo en los próximos 7 días
     * **UserController.js**: En este archivo creamos las funciones de cada endpoint:
-        * **getUser**: Extrae la informacion del usuario.
+        * **getUser**: Extrae la información del usuario.
         * **patchUser**: Actualiza el nombre de un usuario.
         * **deleteUser**: Elimina un usuario.
 
@@ -156,14 +153,14 @@ package-lock.json
 ```
 ## Explicación de la securización de la API:
 * Los usuarios que no estén logados pueden:
-    * Acceder a los enpoints de peliculas y series.
+    * Acceder a los enpoints de películas y series.
     * Registrarse y loguearse.
-* Los usuarios logueados con rol 'user', pueden ademas:
+* Los usuarios logueados con rol 'user', pueden además:
     * Extraer su usuario.
     * Cambiar su nombre de usuario.
-    * Acceder a sus prestamos.
-    * Generar un nuevo prestamo propio.
-* Los usuarios con rol 'admin', tambien pueden:
+    * Acceder a sus préstamos.
+    * Generar un nuevo préstamo propio.
+* Los usuarios con rol 'admin', también pueden:
     * Acceder a todos los pedidos.
     * Borrar un usuario.
 
