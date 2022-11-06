@@ -92,7 +92,7 @@ npm i jsonwebtoken
 
 Usamos el modelo vista-controlador para estructurar el proyecto. **Creamos un CRUD básico**. En el proyecto existirá la siguiente estructura:
 
-* **app.js**: Este es el archivo principal. En este archivo se llama al archivo de las rutas, se gestiona la creación de logs, se gestiona la ruta inicial (/) y se arranca el servidor.
+* **app.js**: Este es el archivo principal. En este archivo se llama al archivo de las rutas, y se arranca el servidor.
 
 * **config**
     * **config.json**: Gestiona la configuración para conectar con la base de datos. Se crea de manera automática con **sequelize**.
