@@ -22,18 +22,24 @@ module.exports = (sequelize, DataTypes) => {
   Show.init({
     show_id:{
       type : DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement:true
     },
     title: DataTypes.STRING,
     poster: DataTypes.STRING,
     overview: DataTypes.TEXT,
     first_air_date: DataTypes.DATEONLY,
-    genre: DataTypes.STRING
+    genre: DataTypes.STRING,
+    rating: DataTypes.INTEGER,
+    next_chapter: DataTypes.DATEONLY,
+    special_event: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
   }, {
     sequelize,
     modelName: 'Show',
     timestamps:false,
-    freezeTableName:true
   });
   return Show;
 };

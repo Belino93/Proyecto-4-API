@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Article.belongsToMany(models.Lease, {
-        through: "articles_lease",
+        through: "Articles_Lease",
         foreignKey: {
           name:"article_id"
         },
@@ -23,13 +23,13 @@ module.exports = (sequelize, DataTypes) => {
   Article.init({
     article_id: { 
       type:DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement:true
     }
   }, {
     sequelize,
     modelName: 'Article',
     timestamps:false,
-    freezeTableName:true
   });
   return Article;
 };

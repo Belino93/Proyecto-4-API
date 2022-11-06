@@ -22,18 +22,20 @@ module.exports = (sequelize, DataTypes) => {
   Movie.init({
     movie_id: {
       type : DataTypes.INTEGER,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement:true
     },
     title: DataTypes.STRING,
     poster: DataTypes.STRING,
     release_date: DataTypes.DATEONLY,
     overview: DataTypes.TEXT,
-    genre: DataTypes.STRING
+    genre: DataTypes.STRING,
+    rating: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Movie',
     timestamps:false,
-    freezeTableName:true
+
   });
   return Movie;
 };
