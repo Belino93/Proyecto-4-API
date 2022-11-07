@@ -48,7 +48,7 @@ sequelize db:seed:all
 Haz clic para realizar una copia en postman del workspace con las request permitidas.
 <br>
 
- [![Ejecutar en Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/11138723-eeb5cf01-1f60-493f-9755-3a67dcc8988f?action=collection%2Ffork&collection-url=entityId%3D11138723-eeb5cf01-1f60-493f-9755-3a67dcc8988f%26entityType%3Dcollection%26workspaceId%3D8cbf41ec-fd52-44cd-82e7-1a6bcbebc7d5)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/23873290-491822b9-d8a9-4b00-aaf0-29ddb396b3ac?action=collection%2Ffork&collection-url=entityId%3D23873290-491822b9-d8a9-4b00-aaf0-29ddb396b3ac%26entityType%3Dcollection%26workspaceId%3D0036013c-adfd-42cc-995e-7fbd3c9599ba)
 
 
 ## Tecnologías utilizadas en el proyecto:
