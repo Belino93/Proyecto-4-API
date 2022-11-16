@@ -39,9 +39,6 @@ LeaseController.updateLease = async (req, res) => {
     } catch (error) {
         res.send(`${error}`);
     }
-
-
-
 }
 
 LeaseController.showLease = async (req, res) => {
